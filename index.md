@@ -3,9 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+bokeh: true
 title: Applied Dunnhumby Analysis
 bigimg: /img/banner.jpg
 ---
+
+{% include 2018/03-16/interactive_graphs_div.html  %}
+{%  include 2018/03-16/interactive_graphs_script.html  %}
+{%  include 2018/03-16/interactive_graphs.html  %}
 
 # Introduction
 
