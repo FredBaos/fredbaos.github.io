@@ -1,8 +1,15 @@
 ---
 layout: base
+bokeh: true
 ---
 
 {% include header.html type="page" %}
+
+{%if page.bokeh  %}
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.15.min.js"></script>
+{% endif  %}
+
 
 <div class="container" role="main">
   <div class="row">
