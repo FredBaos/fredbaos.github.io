@@ -7,10 +7,6 @@ title: Applied Dunnhumby Analysis
 bigimg: /img/banner.jpg
 ---
 
-{% include interactive_graphs_div.html  %}
-{% include interactive_graphs_script.html  %}
-{% include interactive_graphs.html  %}
-
 # Introduction
 
 This project aims to explore how people consume goods and what might influence the purchase. For that, The Complete Journey dataset from Dunnhumby was used). It provides various information about transactions from 2’500 households at a retailer over two years (content of their baskets, use of coupons, household’s information, etc.).
@@ -33,6 +29,8 @@ This result led us to study the co-purchase aspect of the baskets to see if patt
 
 A network was created to look at the relationship between the types of products. For that, the commodities are represented as nodes. This allows to visualize which commodities are bought together and how often :
 (network graph)
+
+{% include interactive_graphs.html  %}
 
 Examples of cliques :
 -Clique 4 : Soft drinks, Fluid milk products, Pet care supplies, Candy–checklane, Dog foods, Cat food
