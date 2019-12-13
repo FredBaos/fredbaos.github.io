@@ -3,7 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
-bokeh: true
 title: Applied Dunnhumby Analysis
 bigimg: /img/banner.jpg
 ---
