@@ -3,6 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+title: Applied Dunnhumby Analysis (ADA Fall 2019)
+subtitle: This is where we present our analysis of the Dunnhumby dataset
+bigimg: /img/banner.jpg
 ---
 
 # Introduction
