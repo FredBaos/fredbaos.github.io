@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: page
+bigimg: /img/banner.jpg
 ---
 
 # Introduction
@@ -12,6 +13,7 @@ Write introduction here
 # First section
 
 Add first section here
+![plot2](img/plot2.png)
 
 # Second section
 
