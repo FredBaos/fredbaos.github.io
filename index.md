@@ -9,36 +9,43 @@ bigimg: /img/banner.jpg
 
 # Introduction
 
-NEW TEST
+This project aims to explore how people consume goods and what might influence the purchase of these goods. For that purpose, The Complete Journey dataset from Dunnhumby was used. It provides various information about transactions from 2’500 households at a retailer over two years (content of their baskets, use of coupons, household’s information, etc.).
+Having access to these information offers interesting perspectives, such as:
+*	Which goods are the most purchased and which are the least purchased?
+*	What goods are frequently or rarely bought together?
+*	Do the income and/or the number of children have an influence on the purchases?
 
-This project aims to explore how people consume goods and what might influence the purchase. For that, The Complete Journey dataset from Dunnhumby was used). It provides various information about transactions from 2’500 households at a retailer over two years (content of their baskets, use of coupons, household’s information, etc.).
-Having access to these information offers interesting perspectives, such as :
-*	Which goods are the most purchased and which are less ?
-*	What goods are frequently or rarely bought together ?
-*	Do the income and the number of children have an influence on the purchases ?
-*	Last section
 
 # First section
 
-First, we focused on finding which types of good (commodities) are the most purchased. We used the content of the baskets to find which products appeared the most. The most purchased products are presented in the following plot :
+First, we focused on finding which types of good (commodities) are the most purchased. We used the content of the baskets to find which products appeared the most. The most purchased products are presented in the following plot:
 
 ![plot2](img/plot2.png)
 
 One would expect that products which are purchased in the higher number of baskets are cheap and basic goods. We can see that, indeed, the top 5 contains soft drinks, dairy products, bread, snacks and cheese.
 
 However, we see that the most common bought commodity was found in only 6% of the baskets.
-This result led us to study the co-purchase aspect of the baskets to see if patterns or correlations can be observed.
+This result informed us that no products are systematically dominant, and it is a good indication of the variety of the purchases, and therefore we have a nice environment to study relationships between products. 
 
-A network was created to look at the relationship between the types of products. For that, the commodities are represented as nodes. This allows to visualize which commodities are bought together and how often :
-(network graph)
-
+For this purpose, we first created a graph in which each node represents a product, and by clicking on one node/product, we can visualize which products were purchased at least once with this particular product. 
 {% include interactive_graphs.html  %}
 
-Examples of cliques :
--Clique 4 : Soft drinks, Fluid milk products, Pet care supplies, Candy–checklane, Dog foods, Cat food
--Clique 11 : Soft drinks, Fluid milk products, Cheese, Imported wine, Domestic wine, Beers/ales
--Clique 15 : Soft drinks, Fluid milk products, Cheese, Beef, Broccoli/cauliflower, Tomatoes, Onions, Salad mix, Carrots
--Clique 322 : Soft drinks, Fluid milk products, Cheese, Popcorn, Candy-checklane, Candy-packaged
+Another important visualization of these relationships might be obtained by studying the co-purchase matrix of the products, and see if patterns or correlations can be observed. Note that the above graph illustrates the relationships present in the co-occurence matrix, but does not take into account the number of times two products have been bought together. Therefore, this additional visualization allow us to get different information, by expliciting the number of products bought with a particular product, and the number of times it has been the case.
+
+![plot3](img/plot3.png)
+
+As we can see on the above co-purchase matrix, some products are always bought alone, whereas some others are bought with a lot of other products (these should be the above most purchased products among all baskets). Note that higher value of the co-occurence matrix does correspond to a higher number of co-purchase for two given products. 
+
+Now, another interesting point to study is the identification of bridges among our products. A bridge basically is a pair of products that are exclusively bought together, without any other product. Bridges are an interesting component because they might represent links between distinct clusters of products (see more about that on the next paragraph), considering our product network. Furthermore, they offer an interesting economic insight in its own way. Here are the interesting bridges we identified in our product network: (product of the right is the only other product to which product of the left was linked)
+*	FUEL -> CIGARETTES
+*	ROSES -> GREETING CARDS/WRAP/PARTY SPLY
+*	SANDWICHES -> SOFT DRINKS
+*	CHIPS&SNACKS -> SOFT DRINKS
+*	SYRUPS/TOPPINGS -> ICE CREAM/MILK/SHERBTS
+
+As we can see, these bridges are quite intuitive. Now, a central aspect of the study of the product network is to identify groups or "clusters" of products, which are often bought together and form "communities" that are intuitive in the economical point of vue. After having tried to remove bridges to get these groups, we figured out that every bridge was only linking one particular product to a giant component. Therefore, we had to proceed with another tool to find groups. We got pretty interesting results using cliques, which aer groups of products in which all pairwise combinations have been purchased at least once together. Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
+
+(interactive cliques plot here)
 
 We can see in the examples presented above that Soft drinks and Fluid milk products appear in a lot of cliques. This is consistent with the first results where we observed that Soft drinks and Fluid milk products are the two most present products in the baskets.
 
