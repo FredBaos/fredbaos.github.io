@@ -70,17 +70,19 @@ One approach to studying the effect of household income on consumption patterns 
 
 (Normalized curves of three most correlated products with household income)
 
-Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` are a bit more surprising, but the fact that they are typically on a higher end relative to other snacks may help explain this. 
+Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` are a bit more surprising, but the fact that their prices are typically on the higher-end relative to other snacks may help explain this. 
 
 (Normalized curves of three most correlated products with number of children)
 
-It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to correlate with increasing size of the family unit.
+It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to be positively correlated with the size of the family unit.
 
 Which of these items are strongly correlated with both household income *and* the number of children? Which ones are only closely related to either one exclusively? The mapping of some of the most interesting products in these two dimensions is demonstrated below.
 
 ![correlations](img/correlations.png)
 
-How can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques rather than individual products? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
+The examples at the corners of this spectrum may shed light on meaningful relationships between purchase decisions and the two economic factors. For instance, `FRZN POTATOES` and `MEAT - SHELF STABLE` (i.e. canned goods typically designed to remain unspoiled for a long time) are negatively correlated with income as these are typical inferior goods. Furthermore, it is sensible they are positively correlated with the number of children at the same time. Furthermore, food products such as `BAKED BREAD/BUNS/ROLLS` and `COLD CEREAL` are posiively correlated with both income and number of children which is again reasonable. Finally, we point to some unintuitive results in this plot such as the negative correlation of `BABY FOOD` with the number of children. The fact that `BABY FOOD` is among the 30 products with the lowest backet counts as well as co-purchase counts might help justify this counter-intuitive finding as there aren't enough samples of it in our data.
+
+A large task still remains at hand: how can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
 
 # Third section
 
