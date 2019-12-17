@@ -78,18 +78,6 @@ It appears logical that `HALLOWEEN`, which spans anything from decorating lights
 
 Which of these items are strongly correlated with both household income *and* the number of children? Which ones are only closely related to either one exclusively? The mapping of some of the most interesting products in these two dimensions is demonstrated below.
 
-[plot of correlation of commodities with income, decreasing order, top 20, + top 3 HH income VS weekly expenditure]
-
-As we can see on the above plot, the three commodities most correlated with the income are `SUNTAN`, `HOME HEALTH CARE`, and Snack nuts. It was found that for Suntan products and Home health care products, the weekly expenditure increases as the household’s income increases. These types of products can be considered as luxury products and are expected to correlate with income. However, another interesting result we obtained was for Snack nuts products for which the same effect is observed. This might be more surprising, but it might be explained by the fact that they are usually more expensive than other snacks.
-
-Below, you will find the same study as before, but this time for the correlation between the commodities and the number of children:
-
-[plot of correlation of commodities with #children, decreasing order, top 20, + top 3 HH income VS weekly expenditure]
-
-Here, we can see that the three commodities most correlated with the number of children are Convenient brkfst/whlsm snacks, Halloween and Glassware and dinnerware. As before, as the number of children in the household increases, the weekly expenditure also increases. Here, the most correlated commodities make sense, as these are more "children related" commodities, except maybe for Glassware and dinnerware, maybe children tend to break dishes or glasses.
-
-Now, the following plot is a nice visual representation of correlations between products and both factors we studied before in this section:
-
 ![correlations](img/correlations.png)
 
 How can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques rather than individual products? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
