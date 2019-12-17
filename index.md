@@ -68,13 +68,13 @@ Household income in the dataset largely falls into 12 brackets from "under 15K" 
 
 One approach to studying the effect of household income on consumption patterns is to analyze the weekly average expenditures per product per household in each income bracket to identify any statistically significant differences between brackets. A similar analysis can be conducted in each number-of-children bracket which varies from "0" to "3+". Below are three most correlated products with income and number of children respectively.
 
-<iframe src="_includes/income.html"></iframe>
+<iframe src="income.html"></iframe>
 
 The weekly expenditures are normalized by max-scaling in each product since what matters is the degree of correlation (which is unchanged by max-scaling) rather than the actual weekly expenditure per se. Weekly expenditures are bound to vary significantly from product to product due to the differences in their unit prices and therefore obscure the scale on the y-axis significantly.
 
 Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` is a more surprising result, but the fact that their prices are typically on the higher-end relative to other snacks may help explain this. 
 
-<iframe src="_includes/children.html"></iframe>
+<iframe src="children.html"></iframe>
 
 It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to be positively correlated with the size of the family unit as they need more dishes at home.
 
