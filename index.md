@@ -40,16 +40,16 @@ Note that the above network illustrates the co-purchase relationships from the s
 
 In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
 
-The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. 
+The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. The bridges are visualized in the following interactive plot.
 
 {% include bridges.html %}
 
 Below are five most interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the only product it was ever purchased with:
-*	`FUEL` -> `CIGARETTES`
-*	`ROSES` -> `GREETING CARDS/WRAP/PARTY SPLY`
-*	`SANDWICHES` -> `SOFT DRINKS`
-*	`CHIPS&SNACKS` -> `SOFT DRINKS`
-*	`SYRUPS/TOPPINGS` -> `ICE CREAM/MILK/SHERBTS`
+*	`FUEL` &rarr; `CIGARETTES`
+*	`ROSES` &rarr; `GREETING CARDS/WRAP/PARTY SPLY`
+*	`SANDWICHES` &rarr; `SOFT DRINKS`
+*	`CHIPS&SNACKS` &rarr; `SOFT DRINKS`
+*	`SYRUPS/TOPPINGS` &rarr; `ICE CREAM/MILK/SHERBTS`
 
 As we can see, these bridges are quite intuitive. For example, when people come to buy `FUEL` (gas), it is often the only thing they buy, or if bought with anything else, it is always purchased with `CIGARETTES`. Similarly, `CHIPS&SNACKS` are always seen together with `SOFT DRINKS` if it isn't the only thing in the basket.
 
