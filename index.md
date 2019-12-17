@@ -16,7 +16,6 @@ This project aims to explore how people consume goods and what might influence t
 *	What goods are frequently or rarely associated together?
 *	Do the income and/or the number of children have an influence on the purchases?
 
-
 # Let us take a peek at your basket
 
 Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts. 
@@ -48,19 +47,7 @@ The network now unlocks a number of interesting graph analysis for us. In partic
 
 As we can see, these bridges are quite intuitive. For example, when people come to buy `FUEL` (gas), it is often the only thing they buy, or if bought with anything else, it is always purchased with `CIGARETTES`. Similarly, `CHIPS&SNACKS` are always seen together with `SOFT DRINKS` if it isn't the only thing in the basket.
 
-Now, the central aspect of the study of the product network is to identify groups or communities of products based on the co-purchase occasions that are intuitive in the economical point of view. To this end, we obtained interesting results using "cliques". A group of products is a clique if there exists at least one co-purchase count between every pair of products. Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
-
-(interactive cliques plot here)
-
-As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
-*	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
-*	Clique 11 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `IMPORTED WINE`, `DOMESTIC WINE`, `BEERS/ALES`
-*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS` 
-*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED` 
-
-In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with the first results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix. 
-
-By constructing the co-purchase matrix and defining cliques, we managed to extract some patterns in how people consume. But what could be some driving factors for these patterns? This will be the subject of the next section, where two economic factors were studied: the household’s income and the number of children.
+Now, the central aspect of the study of the product network is to identify economincally intuitive groups or communities of products based on the co-purchase occasions. However, prior to this final analysis, we would like to explore a few more important questions in pursuit of a more comprehensive economic understanding. For instance, how can we complement the product network analysis with other economic information that is available such as household income or the number of children in the household? In the next section, we diverge briefly to analyze household income and children data only so that its insights can ultimately be combined to the product analysis in the network.
 
 # Do children and household income matter?
 
@@ -84,9 +71,19 @@ But which of these items is strongly correlated with both household income *and*
 
 The examples at the corners of this spectrum may shed light on meaningful relationships between purchase decisions and the two economic factors. For instance, `FRZN POTATOES` and `MEAT - SHELF STABLE` (i.e. canned goods typically designed to remain unspoiled for a long time) are negatively correlated with income as these are typical inferior goods. Furthermore, it is sensible they are positively correlated with the number of children at the same time. Furthermore, food products such as `BAKED BREAD/BUNS/ROLLS` and `COLD CEREAL` are positively correlated with both income and number of children, which is again reasonable. Finally, we point to some unintuitive results in this plot such as the negative correlation of `BABY FOOD` with the number of children. The fact that `BABY FOOD` is among the 30 products with the lowest backet counts as well as co-purchase counts might help justify this counter-intuitive finding as there aren't enough samples of it in our data.
 
-The final task remains at hand: how can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
+# "Clique on the link"
 
-# Clique on the link
+The final task remains at hand: *linking* the economic factors we have just analyzed with the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network. A group of products is a clique if there exists at least one co-purchase count between every pair of products. Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
+
+(interactive cliques plot here)
+
+As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
+*	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
+*	Clique 11 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `IMPORTED WINE`, `DOMESTIC WINE`, `BEERS/ALES`
+*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS` 
+*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED` 
+
+In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with the first results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix. 
 
 
 
