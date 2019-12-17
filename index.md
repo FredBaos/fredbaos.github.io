@@ -9,7 +9,7 @@ bigimg: /img/banner.jpg
 
 # Introduction
 
-You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store for a reason. Maybe you even have a list of products to purchase in mind. That is, your shopping list is not purely random; it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
+You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store for a reason. Maybe you even have a list of things to buy in mind. That is, your shopping list is not purely random; it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
 
 This project aims to explore how people consume goods and what might influence the purchase of these goods. To this end, "The Complete Journey" dataset from Dunnhumby was used. It provides various information about all transactions from 2,500 households at a retailer over two years. Having access to these information offers interesting perspectives, such as:
 *	Which goods are the most purchased and which are the least purchased?
@@ -17,7 +17,7 @@ This project aims to explore how people consume goods and what might influence t
 *	Do the income and/or the number of children have an influence on the purchases?
 
 
-# Study of baskets of goods
+# Let us take a peek at your basket
 
 First, we focused on finding which types of good (commodities) are the most purchased. We used the content of the baskets to find which products appeared the most. The most purchased products are presented in the following plot:
 
