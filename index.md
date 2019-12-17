@@ -9,7 +9,7 @@ bigimg: /img/banner.jpg
 
 # Introduction
 
-You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store with purpose. Maybe you even have a list of products to purchase in mind. That is, your shopping list is not purely random; it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
+You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store for a reason. Maybe you even have a list of products to purchase in mind. That is, your shopping list is not purely random. Instead, it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
 
 This project aims to explore how people consume goods and what might influence the purchase of these goods. For that purpose, The Complete Journey dataset from Dunnhumby was used. It provides various information about transactions from 2’500 households at a retailer over two years (content of their baskets, use of coupons, household’s information, etc.).
 Having access to these information offers interesting perspectives, such as:
