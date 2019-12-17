@@ -30,7 +30,8 @@ One would expect that products at the top of the ranking are cheap and basic goo
 Interestingly, the most common bought product `SOFT DRINKS` is found in only 6% of the baskets. This result informs us that no products are systematically dominant in terms of purchases. This is a good indication of the inherent variety of purchases, and therefore we have a nice environment to study relationships between products.
 
 Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the "co-purchase matrix" whose values indicate the total number of baskets that any pair of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products that this particular product have been purchased with at least once in the past.
-{% include interactive_graphs.html  %}
+
+{% include interactive_graphs.html %}
 
 Note that the above network illustrates the co-purchase relationships from the study of the baskets, but does not actually weigh the edges by the number of times two products have been bought together. A heat map, therefore, may allow us to uncover any additional correlations or patterns by expliciting presenting the weight which is equal to the log-normalized number of total co-purchase counts.
 
