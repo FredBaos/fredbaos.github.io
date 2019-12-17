@@ -11,7 +11,7 @@ bigimg: /img/banner.jpg
 
 You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store for a reason. Maybe you even have a list of things to buy in mind. That is, your shopping list is not purely random; it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
 
-This project aims to explore how people consume goods and what might influence the purchase of these goods. To this end, "The Complete Journey" dataset from Dunnhumby was used. It provides various information about all transactions from 2,500 households at a retailer over two years. Having access to these information offers interesting perspectives, such as:
+This project aims to explore how people consume goods and what might influence the purchase of these goods by studying a large number of transactions from "The Complete Journey" dataset from Dunnhumby. The data includes over 275,000 baskets in total composed from any number of items from hundreds of unique commodities purchased by more than 2,500 households in over two years. This rich dataset offers ample opportunities to extract meaningful economic insights and perspectives such as:
 *	Which goods are the most purchased and which are the least purchased?
 *	What goods are frequently or rarely associated together?
 *	Do the income and/or the number of children have an influence on the purchases?
@@ -19,7 +19,9 @@ This project aims to explore how people consume goods and what might influence t
 
 # Let us take a peek at your basket
 
-First, we focused on finding which types of good (commodities) are the most purchased. We used the content of the baskets to find which products appeared the most. The most purchased products are presented in the following plot:
+Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and browsing the list of products included in them while keeping track of product counts. 
+
+The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most frequently and sort them in a descending order:
 
 ![plot2](img/plot2.png)
 
