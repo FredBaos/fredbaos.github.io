@@ -19,17 +19,17 @@ This project aims to explore how people consume goods and what might influence t
 
 # Let us take a peek at your basket
 
-Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and browsing the list of products included in them while keeping track of product counts. 
+Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts. 
 
-The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most frequently and sort them in a descending order:
+The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly a few big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most often:
 
 ![plot2](img/plot2.png)
 
-One would expect that products which are purchased in the higher number of baskets are cheap and basic goods. We can see that, indeed, the top 5 contains soft drinks, dairy products, bread, snacks and cheese.
+One would expect that products at the top of the ranking are cheap and basic goods. Indeed, we can see that the top 5 contains soft drinks, dairy products, bread, snacks and cheese, all of which are classic examples of inferior goods.
 
-However, we see that the most common bought commodity was found in only 6% of the baskets.
-This result informed us that no products are systematically dominant, and it is a good indication of the variety of the purchases, and therefore we have a nice environment to study relationships between products. 
+Interestingly, the most common bought product, SOFT DRINKS, is found in only 6% of the baskets. This result informs us that no products are systematically dominant in terms of purchases. This is a good indication of the inherent variety of purchases, and therefore we have a nice environment to study relationships between products.
 
+Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the "co-purchase matrix" whose values indicate the total number of baskets in which any pair of products 
 For this purpose, we first created a graph in which each node represents a product, and by clicking on one node/product, we can visualize which products were purchased at least once with this particular product. 
 {% include interactive_graphs.html  %}
 
