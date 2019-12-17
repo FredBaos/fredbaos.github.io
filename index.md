@@ -36,28 +36,30 @@ Note that the above network illustrates the co-purchase relationships from the s
 
 ![plot3](img/plot3.png)
 
-In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
+In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
 
-Now, another interesting point to study is the identification of bridges among our products. A bridge basically is a pair of products that are exclusively bought together, without any other product. Bridges are an interesting component because they might represent links between distinct clusters of products (see more about that on the next paragraph), considering our product network. Furthermore, they offer an interesting economic insight in its own way. Here are the interesting bridges we identified in our product network: (product of the right is the only other product to which product of the left was linked)
-*	FUEL -> CIGARETTES
-*	ROSES -> GREETING CARDS/WRAP/PARTY SPLY
-*	SANDWICHES -> SOFT DRINKS
-*	CHIPS&SNACKS -> SOFT DRINKS
-*	SYRUPS/TOPPINGS -> ICE CREAM/MILK/SHERBTS
+The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In this project, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. Below are the interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the only product it was ever purchased with:
+*	`FUEL` -> `CIGARETTES`
+*	`ROSES` -> `GREETING CARDS/WRAP/PARTY SPLY`
+*	`SANDWICHES` -> `SOFT DRINKS`
+*	`CHIPS&SNACKS` -> `SOFT DRINKS`
+*	`SYRUPS/TOPPINGS` -> `ICE CREAM/MILK/SHERBTS`
 
-As we can see, these bridges are quite intuitive. Now, a central aspect of the study of the product network is to identify groups or "clusters" of products, which are often bought together and form "communities" that are intuitive in the economical point of vue. After having tried to remove bridges to get these groups, we figured out that every bridge was only linking one particular product to a giant component. Therefore, we had to proceed with another tool to find groups. We got pretty interesting results using cliques, which aer groups of products in which all pairwise combinations have been purchased at least once together. Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
+As we can see, these bridges are quite intuitive. For example, when people come to buy `FUEL` (gas), it is often the only thing they buy, or if bought with anything else, it is always purchased with `CIGARETTES`. Similarly, `CHIPS&SNACKS` are always seen together with `SOFT DRINKS` if it isn't the only thing in the basket.
+
+Now, the central aspect of the study of the product network is to identify groups or communities of products based on the co-purchase occasions that are intuitive in the economical point of view. To this end, we obtained interesting results using "cliques". A group of products is a clique if there exists at least one co-purchase count between every pair of products. Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
 
 (interactive cliques plot here)
 
-As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some noticable examples are listed here:
-*	Clique 4: Soft drinks, Fluid milk products, Pet care supplies, Candy–checklane, Dog foods, Cat food 
-*	Clique 11 : Soft drinks, Fluid milk products, Cheese, Imported wine, Domestic wine, Beers/ales
-*	Clique 15 : Soft drinks, Fluid milk products, Cheese, Beef, Broccoli/cauliflower, Tomatoes, Onions, Salad mix, Carrots 
-*	Clique 322 : Soft drinks, Fluid milk products, Cheese, Popcorn, Candy-checklane, Candy-packaged
+As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
+*	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
+*	Clique 11 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `IMPORTED WINE`, `DOMESTIC WINE`, `BEERS/ALES`
+*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS` 
+*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED` 
 
-We can see in the examples presented above that "Soft drinks" and "Fluid milk products" appear in a lot of cliques. This is consistent with the first results where we observed that "Soft drinks" and "Fluid milk products" are the two most present products in the baskets.
+In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with the first results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix. 
 
-This shows that some patterns can be observed. What could be some driving factors for these patterns? This will be the subject of the next section, where two potential factors were studied: the household’s income and the number of children.
+By constructing the co-purchase matrix and defining cliques, we managed to extract some patterns in how people consume. But what could be some driving factors for these patterns? This will be the subject of the next section, where two potential factors were studied: the household’s income and the number of children.
 
 # Study of potential econonomic factors on purchases
 
