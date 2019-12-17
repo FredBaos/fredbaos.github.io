@@ -64,13 +64,13 @@ By constructing the co-purchase matrix and defining cliques, we managed to extra
 
 # Do children and household income matter?
 
-Household income in the dataset largely falls into 12 brackets from "under 15K" to "200-249K" with the median income at approximately $29,500. It also turns out that rouhgly 64% of the households do not have children, so we can see that the retailer is mainly visited by low-income family units with no dependents.
+Household income in the dataset largely falls into 12 brackets from "under 15K" to "200-249K" with the median income at approximately $29,500. It also turns out that roughly 64% of the households do not have children, so we can see that the retailer is mainly visited by low-income family units with no dependents.
 
 One approach to studying the effect of household income on consumption patterns is to analyze the weekly average expenditures per product per household in each income bracket to identify any statistically significant differences between brackets. A similar analysis can be conducted in each number-of-children bracket which varies from "0" to "3+". Below are three most correlated products with income and number of children respectively.
 
 (Normalized curves of three most correlated products with household income)
 
-Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` are a bit more surprising, but as the fact that they are typically on a higher end relative to other snacks may help explain this. 
+Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` are a bit more surprising, but the fact that they are typically on a higher end relative to other snacks may help explain this. 
 
 (Normalized curves of three most correlated products with number of children)
 
