@@ -61,10 +61,10 @@ In clique 4, one may surmise that the community is closely related to "pet produ
 
 By constructing the co-purchase matrix and defining cliques, we managed to extract some patterns in how people consume. But what could be some driving factors for these patterns? This will be the subject of the next section, where two potential factors were studied: the household’s income and the number of children.
 
-# Study of potential econonomic factors on purchases
+# Do children and household income matter?
 
 After a study of household's income repartition and creation of income ranges, we started with a study around similarities between householders in terms of weekly expenditure for a given commoditiy (which does represent a group of products). Note that expenditure is simply quantity multiplied by AUP (Actual Unit Price), and that our similarity metric is obtained by computing the Jaccard similarity between two given householders where the intersection is weighted by the difference in expenditure for each commodity.
-
+  
 A first interesting result is obtained when we study repartition of these similarities among every pairs of householders. You can find this result on the boxplot below.
 
 ![plot4](img/plot4.png)
@@ -96,7 +96,7 @@ Now, the following plot is a nice visual representation of correlations between 
 
 ![correlations](img/correlations.png)
 
-It appears plausible to detect groups or communities among products based on their relationships with income and number of children. It could then be interesting to study the influence of income on purchases of these groups and obtain a more comprehensive understanding of consumption behavior.
+How can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income depend on the cliques? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
 
 # Third section
 
