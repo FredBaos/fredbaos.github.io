@@ -11,7 +11,7 @@ bigimg: /img/banner.jpg
 
 You walk into a retail store. The moment you walk in, you notice several others are there to shop like you. Perhaps if something interests you, you may spontaneously choose to include it in your basket, but you have come to the store for a reason. Maybe you even have a list of things to buy in mind. That is, your shopping list is not purely random; it is constructed with purpose and the items included in it have meaningful economic relationships. But it's not just you. Everyone shops with purpose.
 
-This project aims to explore how people consume goods and what might influence the purchase of these goods. To this end, "The Complete Journey" dataset from Dunnhumby was used. It provides various information about all transactions from 2,500 households at a retailer over two years. Having access to these information offers interesting perspectives, such as:
+This project aims to explore how people consume goods and what might influence the purchase of these goods by studying a large number of transactions from "The Complete Journey" dataset from Dunnhumby. The data includes over 275,000 baskets in total composed from any number of items from hundreds of unique commodities purchased by more than 2,500 households in over two years. This rich dataset offers ample opportunities to extract meaningful economic insights and perspectives such as:
 *	Which goods are the most purchased and which are the least purchased?
 *	What goods are frequently or rarely associated together?
 *	Do the income and/or the number of children have an influence on the purchases?
@@ -19,23 +19,24 @@ This project aims to explore how people consume goods and what might influence t
 
 # Let us take a peek at your basket
 
-First, we focused on finding which types of good (commodities) are the most purchased. We used the content of the baskets to find which products appeared the most. The most purchased products are presented in the following plot:
+Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts. 
+
+The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly a few big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most often:
 
 ![plot2](img/plot2.png)
 
-One would expect that products which are purchased in the higher number of baskets are cheap and basic goods. We can see that, indeed, the top 5 contains soft drinks, dairy products, bread, snacks and cheese.
+One would expect that products at the top of the ranking are cheap and basic goods. Indeed, we can see that the top 5 contains soft drinks, dairy products, bread, snacks and cheese, all of which are classic examples of inferior goods.
 
-However, we see that the most common bought commodity was found in only 6% of the baskets.
-This result informed us that no products are systematically dominant, and it is a good indication of the variety of the purchases, and therefore we have a nice environment to study relationships between products. 
+Interestingly, the most common bought product `SOFT DRINKS` is found in only 6% of the baskets. This result informs us that no products are systematically dominant in terms of purchases. This is a good indication of the inherent variety of purchases, and therefore we have a nice environment to study relationships between products.
 
-For this purpose, we first created a graph in which each node represents a product, and by clicking on one node/product, we can visualize which products were purchased at least once with this particular product. 
+Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the "co-purchase matrix" whose values indicate the total number of baskets that any pair of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products that this particular product have been purchased with at least once in the past.
 {% include interactive_graphs.html  %}
 
-Another important visualization of these relationships might be obtained by studying the co-purchase matrix of the products, and see if patterns or correlations can be observed. Note that the above graph illustrates the relationships present in the co-occurence matrix, but does not take into account the number of times two products have been bought together. Therefore, this additional visualization allow us to get different information, by expliciting the number of products bought with a particular product, and the number of times it has been the case.
+Note that the above network illustrates the co-purchase relationships from the study of the baskets, but does not actually weigh the edges by the number of times two products have been bought together. A heat map, therefore, may allow us to uncover any additional correlations or patterns by expliciting presenting the weight which is equal to the log-normalized number of total co-purchase counts.
 
 ![plot3](img/plot3.png)
 
-As we can see on the above co-purchase matrix, some products are always bought alone, whereas some others are bought with a lot of other products (these should be the above most purchased products among all baskets). Note that higher value of the co-occurence matrix does correspond to a higher number of co-purchase for two given products. 
+In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
 
 Now, another interesting point to study is the identification of bridges among our products. A bridge basically is a pair of products that are exclusively bought together, without any other product. Bridges are an interesting component because they might represent links between distinct clusters of products (see more about that on the next paragraph), considering our product network. Furthermore, they offer an interesting economic insight in its own way. Here are the interesting bridges we identified in our product network: (product of the right is the only other product to which product of the left was linked)
 *	FUEL -> CIGARETTES
