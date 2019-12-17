@@ -40,7 +40,11 @@ Note that the above network illustrates the co-purchase relationships from the s
 
 In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
 
-The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our products network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. Below are the interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the only product it was ever purchased with:
+The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. 
+
+{% include bridges.html %}
+
+Below are five most interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the only product it was ever purchased with:
 *	`FUEL` -> `CIGARETTES`
 *	`ROSES` -> `GREETING CARDS/WRAP/PARTY SPLY`
 *	`SANDWICHES` -> `SOFT DRINKS`
