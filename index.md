@@ -60,32 +60,27 @@ As you might have seen on the above plot, we have some interesting cliques that 
 
 In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with the first results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix. 
 
-By constructing the co-purchase matrix and defining cliques, we managed to extract some patterns in how people consume. But what could be some driving factors for these patterns? This will be the subject of the next section, where two potential factors were studied: the household’s income and the number of children.
+By constructing the co-purchase matrix and defining cliques, we managed to extract some patterns in how people consume. But what could be some driving factors for these patterns? This will be the subject of the next section, where two economic factors were studied: the household’s income and the number of children.
 
 # Do children and household income matter?
 
-After a study of household's income repartition and creation of income ranges, we started with a study around similarities between householders in terms of weekly expenditure for a given commoditiy (which does represent a group of products). Note that expenditure is simply quantity multiplied by AUP (Actual Unit Price), and that our similarity metric is obtained by computing the Jaccard similarity between two given householders where the intersection is weighted by the difference in expenditure for each commodity.
-  
-A first interesting result is obtained when we study repartition of these similarities among every pairs of householders. You can find this result on the boxplot below.
+Household income in the dataset largely falls into 12 brackets from "under 15K" to "200-249K" with the median income at approximately $29,500. It also turns out that rouhgly 64% of the households do not have children, so we can see that the retailer is mainly visited by low-income family units with no dependents.
 
-![plot4](img/plot4.png)
+One approach to studying the effect of household income on consumption patterns is to analyze the weekly average expenditures per product per household in each income bracket to identify any statistically significant differences between brackets. A similar analysis can be conducted in each number-of-children bracket which varies from "0" to "3+". Below are three most correlated products with income and number of children respectively.
 
-We can notice that a good proportion (actually, about 46.9%) of pairs of households have a similarity value greater than 0.2. Then, we picked 10'000 pairs of householders with highest similarity of expenditure among commodities and figured out the following statistics:
+(Normalized curves of three most correlated products with household income)
 
-![plot5](img/plot5.png)
+Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` are a bit more surprising, but as the fact that they are typically on a higher end relative to other snacks may help explain this. 
 
-To justify that these percentages are quite interesting, we computed that if there is no correlation, 
-*	15.4% of householders pairs are expected to be in the same income range;
-*	33.3% of householders pairs are expected to have the same number of children;
-*	11.1% of householders pairs are expected to be in the same income range and have the same number of children.
+(Normalized curves of three most correlated products with number of children)
 
-A possible explanation to the fact that the numbers we obtained are quite close to the numbers "without correlation" is that there are only a few products related with the household income range and number of children. Another possible explanation is that the products related to those factors were purchased in other (perhaps specialized in luxury items / items related to children) stores not included in this dataset.
+It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to correlate with increasing size of the family unit.
 
-Now that we had an approach regarding the householders, we are going to move on the study of commodities that might be correlated to householders' income and/or number of children.
+Which of these items are strongly correlated with both household income *and* the number of children? Which ones are only closely related to either one exclusively? The mapping of some of the most interesting products in these two dimensions is demonstrated below.
 
 [plot of correlation of commodities with income, decreasing order, top 20, + top 3 HH income VS weekly expenditure]
 
-As we can see on the above plot, the three commodities most correlated with the income are Suntan, Home health care and Snack nuts. It was found that for Suntan products and Home health care products, the weekly expenditure increases as the household’s income increases. These types of products can be considered as luxury products and are expected to correlate with income. However, another interesting result we obtained was for Snack nuts products for which the same effect is observed. This might be more surprising, but it might be explained by the fact that they are usually more expensive than other snacks.
+As we can see on the above plot, the three commodities most correlated with the income are `SUNTAN`, `HOME HEALTH CARE`, and Snack nuts. It was found that for Suntan products and Home health care products, the weekly expenditure increases as the household’s income increases. These types of products can be considered as luxury products and are expected to correlate with income. However, another interesting result we obtained was for Snack nuts products for which the same effect is observed. This might be more surprising, but it might be explained by the fact that they are usually more expensive than other snacks.
 
 Below, you will find the same study as before, but this time for the correlation between the commodities and the number of children:
 
