@@ -96,11 +96,11 @@ Now, the following plot is a nice visual representation of correlations between 
 
 ![correlations](img/correlations.png)
 
-How can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income depend on the cliques? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
+How can we complement this analysis with the cliques we found in the product network? Could the relationship between a household's weekly expenditure and its income somehow depend on the cliques rather than individual products? For a more comprehensive economic understanding, we now turn towards combining the results from the product network with household income analysis.
 
 # Third section
 
-Add third section here
+
 
 # Conclusion
 
