@@ -20,7 +20,7 @@ This project aims to explore how people consume goods and what might influence t
 
 # Let us take a peek at your basket
 
-Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts. 
+Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts.
 
 The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly a few big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most often:
 
@@ -34,11 +34,11 @@ Beyond just keeping track of product counts, we can keep track of the number of 
 
 {% include interactive_graphs.html %}
 
-Note that the above network illustrates the co-purchase relationships from the study of the baskets, but does not actually weigh the edges by the number of times two products have been bought together. A heat map, therefore, may allow us to uncover any additional correlations or patterns by expliciting presenting the weight which is equal to the log-normalized number of total co-purchase counts.
+Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weigh of the edges is the log of the number of times two products have been bought together. We only display the details of at most 15 frequently co-purchased products. A heat map may allow us to uncover any additional correlations or patterns by explicitly presenting the weight which is equal to the log-normalized number of total co-purchase counts.
 
 ![plot3](img/plot3.png)
 
-In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer. 
+In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer.
 
 The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. The bridges are visualized in the following interactive plot.
 
@@ -66,7 +66,7 @@ One approach to studying the effect of household income on consumption patterns 
 
 The weekly expenditures are normalized by max-scaling in each product since what matters is the degree of correlation (which is unchanged by max-scaling) rather than the actual weekly expenditure per se. Weekly expenditures are bound to vary significantly from product to product due to the differences in their unit prices and therefore obscure the scale on the y-axis significantly.
 
-Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to be correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` is a more surprising result, but the fact that their prices are typically on the higher-end relative to other snacks may help explain this. 
+Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to be correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` is a more surprising result, but the fact that their prices are typically on the higher-end relative to other snacks may help explain this.
 
 {% include children.html %}
 
@@ -76,14 +76,14 @@ But which of these items is strongly correlated with both household income *and*
 
 ![correlations](img/correlations.png)
 
-The examples at the corners of this spectrum may shed light on meaningful relationships between purchase decisions and the two economic factors. For instance, `FRZN POTATOES` and `MEAT - SHELF STABLE` (i.e. canned goods typically designed to remain unspoiled for a long time) are negatively correlated with income as these are typical inferior goods. Furthermore, it is sensible they are positively correlated with the number of children at the same time. Furthermore, food products such as `BAKED BREAD/BUNS/ROLLS` and `COLD CEREAL` are positively correlated with both income and number of children, which is again reasonable. 
+The examples at the corners of this spectrum may shed light on meaningful relationships between purchase decisions and the two economic factors. For instance, `FRZN POTATOES` and `MEAT - SHELF STABLE` (i.e. canned goods typically designed to remain unspoiled for a long time) are negatively correlated with income as these are typical inferior goods. Furthermore, it is sensible they are positively correlated with the number of children at the same time. Furthermore, food products such as `BAKED BREAD/BUNS/ROLLS` and `COLD CEREAL` are positively correlated with both income and number of children, which is again reasonable.
 
 As a final remark, we point to some unintuitive results in this plot such as the negative correlation of `BABY FOOD` with the number of children. The fact that `BABY FOOD` is among the 30 products with the lowest backet counts as well as co-purchase counts might help justify this counter-intuitive finding as there aren't enough samples of it in our data.
 
 
 # "Clique on the link"
 
-The final task remains at hand: *linking* the economic factors we have just analyzed to the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network. 
+The final task remains at hand: *linking* the economic factors we have just analyzed to the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network.
 
 A group of products is a clique if there exists at least one co-purchase count between every pair of products. We can expect that the products in the same clique are therefore complementary goods whose sales tend to move together. But could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
 
@@ -92,10 +92,10 @@ A group of products is a clique if there exists at least one co-purchase count b
 As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
 *	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
 *	Clique 11 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `IMPORTED WINE`, `DOMESTIC WINE`, `BEERS/ALES`
-*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS` 
-*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED` 
+*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS`
+*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED`
 
-In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with earlier results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix. 
+In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with earlier results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix.
 
 
 # Conclusion
