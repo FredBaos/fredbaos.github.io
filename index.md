@@ -34,7 +34,7 @@ Beyond just keeping track of product counts, we can keep track of the number of 
 
 {% include interactive_graphs.html %}
 
-Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box. 
+Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box.
 
 Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while also highlighting the sparsity of the overall network at the same time. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
 
@@ -89,7 +89,7 @@ The final task remains at hand: *linking* the economic factors we have just anal
 
 A group of products is a clique if there exists at least one co-purchase count between *every* pair of products. We can expect that the products in the same clique are therefore complementary goods whose sales tend to move together. But could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
 
-(interactive cliques plot here)
+{% include cliques.html %}
 
 As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
 *	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
@@ -104,6 +104,6 @@ In clique 4, one may surmise that the community is closely related to "pet produ
 
 Purchase decisions are dfficult to generalize and are not always intuitive. Retailers constantly bombard consumers with tactics for impulse buying which may obscure fundamental economic relationships in a backet of goods, let alone that considerable number of people do tend to buy on the fly. However, with data collected over a sufficiently long time span and analyzed over a large number of unique baskets of goods from many households, we can still gain valuable insights into the inherent consumption patterns.
 
-We have verified that many of these patterns are economically intuitive. Soft drinks are most commonly seen across all baskets. Certain products such as milk are remarkably connected and co-purchased with many other products. People stop for gas and that's often the only thing they stop for; otherwise, they tend to buy cigarettes while they have time. Bouquets are only bought with greeting cards because it makes sense that you would write a few kind, loving words to whom you will present the pretty flowers. Snack-related things are tightly grouped together in terms of co-purchase, so are alcoholic drinks, and so are common vegetables and meats. 
+We have verified that many of these patterns are economically intuitive. Soft drinks are most commonly seen across all baskets. Certain products such as milk are remarkably connected and co-purchased with many other products. People stop for gas and that's often the only thing they stop for; otherwise, they tend to buy cigarettes while they have time. Bouquets are only bought with greeting cards because it makes sense that you would write a few kind, loving words to whom you will present the pretty flowers. Snack-related things are tightly grouped together in terms of co-purchase, so are alcoholic drinks, and so are common vegetables and meats.
 
 An interesting extension of this study can be about how to leverage these intuitive findings for business improvements. Are items in the stores organized and arranged in accordance with these relationships? Can sales increase even more by grouping items in the same clique in a more presentable, easier-to-find way? For products that are rarely associated with anything *and* also has a low sales on its own, could the business actually consider putting these items out of stock to reduce overall costs? While in this project we mainly explored interesting economics at play, it is clear that much of these findings can potentially be incorporated into real-life decisions.
