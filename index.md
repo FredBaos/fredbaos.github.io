@@ -30,13 +30,13 @@ One would expect that products at the top of the ranking are cheap and basic goo
 
 Interestingly, the most common bought product `SOFT DRINKS` is found in only 6% of the baskets. This result informs us that no products are systematically dominant in terms of purchases. This is a good indication of the inherent variety of purchases, and therefore we have a nice environment to study relationships between products.
 
-Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the "co-purchase matrix" whose values indicate the total number of baskets that any pair of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products that this particular product have been purchased with at least once in the past.
+Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the *co-purchase matrix* whose values indicate the total number of baskets that any *pair* of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products with which this particular product have been purchased at least once in the past.
 
 {% include interactive_graphs.html %}
 
 Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box. 
 
-Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while allowing us to see the sparsity of the overal network simultaneously. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
+Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while also highlighting the sparsity of the overal network at the same time. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
 
 {% include heatmap_giant_component.html %}
 
@@ -46,7 +46,7 @@ The network now unlocks a number of interesting graph analysis for us. In partic
 
 {% include bridges.html %}
 
-Below are five most interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the only product it was ever purchased with:
+Below are five most interesting bridges we found in our product network. The product on the left is the isolated product and the product on the right was the *only* product it was ever purchased with:
 *	`FUEL` &rarr; `CIGARETTES`
 *	`ROSES` &rarr; `GREETING CARDS/WRAP/PARTY SPLY`
 *	`SANDWICHES` &rarr; `SOFT DRINKS`
@@ -55,7 +55,7 @@ Below are five most interesting bridges we found in our product network. The pro
 
 As we can see, these bridges are quite intuitive. For example, when people come to buy `FUEL` (gas), it is often the only thing they buy, or if bought with anything else, it is always purchased with `CIGARETTES`. Similarly, `CHIPS&SNACKS` are always seen together with `SOFT DRINKS` if it isn't the only thing in the basket.
 
-Now, the central aspect of the study of the product network is to identify economically intuitive groups or communities of products based on the co-purchase occasions. However, prior to this final analysis, we would like to explore a few more potentially important factors that might influence purchases of products, and thus develop a more comprehensive economic understanding. That is why in the next section, we diverge briefly to analyze household income and number of children only so that its insights can ultimately be combined to the product analysis in the network.
+Now, the central aspect of the study of the product network is to identify economically intuitive groups or *communities* of products based on the co-purchase occasions. However, prior to this final analysis, we would like to explore a few more potentially important factors that might influence purchases of products, and thus develop a more comprehensive economic understanding. To this end, we diverge briefly in the next section to analyze household income and number of children only so that its insights can ultimately be combined to the product analysis in the network.
 
 
 # Do children and household income matter?
@@ -72,22 +72,22 @@ Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are exp
 
 {% include children.html %}
 
-It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to be positively correlated with the size of the family unit as they need more dishes at home.
+It appears logical that `HALLOWEEN`, which spans anything from decorating lights to costume accesories, is strongly correlated with the number of children. Likewise, `GLASSWARE & DINNERWARE` is expected to be positively correlated with the size of the family unit as they need more dishes at home, or perhaps also because children tend to break plates easily.
 
-But which of these items is strongly correlated with both household income *and* the number of children? Which ones are only closely related to either one exclusively? The mapping of some of the most interesting products in these two dimensions is demonstrated below.
+But which of these items is strongly correlated with both household income *and* the number of children? Which ones are only closely related to either one *exclusively*? The mapping of some of the most interesting products in these two dimensions is demonstrated below.
 
 ![correlations](img/correlations.png)
 
 The examples at the corners of this spectrum may shed light on meaningful relationships between purchase decisions and the two economic factors. For instance, `FRZN POTATOES` and `MEAT - SHELF STABLE` (i.e. canned goods typically designed to remain unspoiled for a long time) are negatively correlated with income as these are typical inferior goods. Furthermore, it is sensible they are positively correlated with the number of children at the same time. Furthermore, food products such as `BAKED BREAD/BUNS/ROLLS` and `COLD CEREAL` are positively correlated with both income and number of children, which is again reasonable.
 
-As a final remark, we point to some unintuitive results in this plot such as the negative correlation of `BABY FOOD` with the number of children. The fact that `BABY FOOD` is among the 30 products with the lowest backet counts as well as co-purchase counts might help justify this counter-intuitive finding as there aren't enough samples of it in our data.
+As a final remark, we point to some unintuitive results in this plot such as the negative correlation of `BABY FOOD` with the number of children. The fact that `BABY FOOD` is among the 30 products with the lowest backet counts as well as co-purchase counts might help justify this counter-intuitive finding since this implies there aren't enough samples of it in our data.
 
 
 # "Clique on the link"
 
 The final task remains at hand: *linking* the economic factors we have just analyzed to the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network.
 
-A group of products is a clique if there exists at least one co-purchase count between every pair of products. We can expect that the products in the same clique are therefore complementary goods whose sales tend to move together. But could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
+A group of products is a clique if there exists at least one co-purchase count between *every* pair of products. We can expect that the products in the same clique are therefore complementary goods whose sales tend to move together. But could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
 
 (interactive cliques plot here)
 
