@@ -36,7 +36,7 @@ Beyond just keeping track of product counts, we can keep track of the number of 
 
 Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weigh of the edges is the log of the number of times two products have been bought together. We only display the details of at most 15 frequently co-purchased products. A heat map may allow us to uncover any additional correlations or patterns by explicitly presenting the weight which is equal to the log-normalized number of total co-purchase counts.
 
-![plot3](img/plot3.png)
+{% include heatmap_giant_component.html %}
 
 In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer.
 
