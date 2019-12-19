@@ -34,7 +34,7 @@ Beyond just keeping track of product counts, we can keep track of the number of 
 
 {% include interactive_graphs.html %}
 
-Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weigh of the edges is the log of the number of times two products have been bought together. We only display the details of at most 15 frequently co-purchased products. A heat map may allow us to uncover any additional correlations or patterns by explicitly presenting the weight which is equal to the log-normalized number of total co-purchase counts.
+Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only display the details of at most 15 frequently co-purchased products. A heat map may allow us to uncover any additional correlations or patterns by explicitly presenting the weight which is equal to the log-normalized number of total co-purchase counts.
 
 {% include heatmap_giant_component.html %}
 
