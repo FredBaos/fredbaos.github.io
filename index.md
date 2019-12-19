@@ -97,7 +97,7 @@ As you might have seen on the above plot, we have some interesting cliques that 
 *	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS`
 *	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED`
 
-In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILLK PRODUCTS` appear in a lot of cliques. This is consistent with earlier results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix.
+In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILK PRODUCTS` appear in a lot of cliques. This is consistent with earlier results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix.
 
 
 # Conclusion
