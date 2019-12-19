@@ -36,7 +36,7 @@ Beyond just keeping track of product counts, we can keep track of the number of 
 
 Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box. 
 
-Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on whether or not the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while allowing us to see the sparsity of the overal network simultaneously. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
+Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while allowing us to see the sparsity of the overal network simultaneously. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
 
 {% include heatmap_giant_component.html %}
 
