@@ -22,27 +22,27 @@ This project aims to explore how people consume goods and what might influence t
 
 Studying quantities or sales value is not so interesting because different products can have wildly varying quantities and unit prices which may obscure our analysis. Instead, we focus on taking a peek at each basket in the transaction history and keeping track of product counts.
 
-The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly a few big shoppers from time to time. The product counts from all baskets allows us to discover products have been purchased the most often:
+The number of items in a basket can range from 1 to 80 with an average size being 7 items. So most people buy under 10 products although there are certainly a few big shoppers from time to time. The product counts from all baskets allows us to discover products that have been purchased the most often:
 
 ![plot2](img/plot2.png)
 
-One would expect that products at the top of the ranking are cheap and basic goods. Indeed, we can see that the top 5 contains soft drinks, dairy products, bread, snacks and cheese, all of which are classic examples of inferior goods.
+One would expect that products at the top of the ranking are cheap and basic goods. Indeed, we can see that the top 5 includes soft drinks, dairy products, bread, snacks and cheese, all of which are classic examples of inferior goods.
 
 Interestingly, the most common bought product `SOFT DRINKS` is found in only 6% of the baskets. This result informs us that no products are systematically dominant in terms of purchases. This is a good indication of the inherent variety of purchases, and therefore we have a nice environment to study relationships between products.
 
-Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the *co-purchase matrix* whose values indicate the total number of baskets that any *pair* of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products with which this particular product have been purchased at least once in the past.
+Beyond just keeping track of product counts, we can keep track of the number of times a product is seen together with another product. This analysis leads to what we call the *co-purchase matrix* whose values indicate the total number of occasions that any *pair* of products were purchased together. This result can be most naturally visualized in the form of a network where each node represents a product and the weight of an edge is the value from the co-purchase matrix. By clicking on one node/product, we can visualize all other products with which this particular product have been purchased at least once in the past.
 
 {% include interactive_graphs.html %}
 
-Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weight of the edges is the log of the number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box.
+Note that the above network illustrates the co-purchase relationships from the study of the baskets, where the weights of the edges are the log-normalized number of times two products have been bought together. We only list the details of 15 most frequently co-purchased products in the pop-up box.
 
-Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while also highlighting the sparsity of the overall network at the same time. Below is an interactive heat map where the values are again the log of the number of times two products have been bought together.
+Visualizing with a network has the advantage of clearly seeing a product's connections to the rest. It places the focus primarily on the *existence* of connections. Another great way to visualize product relationships is a heat map, which presents the advantage of visualizing the *weight* of the connections while also highlighting the sparsity of the overall network at the same time. Below is an interactive heat map where the values are again the log-normalized number of times two products have been bought together.
 
 {% include heatmap_giant_component.html %}
 
 In the symmetric matrix above where the y- and x-axis represent the indices of the unique products, two products stand out: `SOFT DRINKS` and `FLUID MILK PRODUCTS`. These correspond to the particularly bright columns (or rows) in the heat map. Despite the fact that a product appears at best in only 6% of the baskets, these two products have a strong co-purchase association with nearly all other products in the retailer.
 
-The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to isolate products which have only been co-purchased with only a single other product. The bridges are visualized in the following interactive plot.
+The network now unlocks a number of interesting graph analysis for us. In particular, we focused on identifying bridges. A bridge is an edge which, when removed, creates two disconnected components in the network. In our product network, bridges offer an interesting economic insight in its own way because by removing them we were able to *isolate* products which have only been co-purchased with only a single other product. The bridges are visualized in the following interactive plot.
 
 {% include bridges.html %}
 
@@ -55,7 +55,7 @@ Below are five most interesting bridges we found in our product network. The pro
 
 As we can see, these bridges are quite intuitive. For example, when people come to buy `FUEL` (gas), it is often the only thing they buy, or if bought with anything else, it is always purchased with `CIGARETTES`. Similarly, `CHIPS&SNACKS` are always seen together with `SOFT DRINKS` if it isn't the only thing in the basket.
 
-Now, the central aspect of the study of the product network is to identify economically intuitive groups or *communities* of products based on the co-purchase occasions. However, prior to this final analysis, we would like to explore a few more potentially important factors that might influence purchases of products, and thus develop a more comprehensive economic understanding. To this end, we diverge briefly in the next section to analyze household income and number of children only so that its insights can ultimately be combined to the product analysis in the network.
+Now, the central aspect of the study of the product network is to identify economically intuitive groups or *communities* of products based on the co-purchase occasions. However, prior to this final analysis, we would like to explore a few more potentially important factors that might influence purchases decisions, and thus develop a more comprehensive economic understanding. To this end, we diverge briefly in the next section to analyze household income and number of children only so that its insights can ultimately be combined to the product analysis in the network.
 
 
 # Do children and household income matter?
@@ -66,7 +66,7 @@ One approach to studying the effect of household income on consumption patterns 
 
 {% include income.html %}
 
-The weekly expenditures are normalized by max-scaling in each product since what matters is the degree of correlation (which is unchanged by max-scaling) rather than the actual weekly expenditure per se. Weekly expenditures are bound to vary significantly from product to product due to the differences in their unit prices and therefore obscure the scale on the y-axis significantly.
+The weekly expenditures are normalized by max-scaling in each product since what matters is the degree of correlation rather than the actual weekly expenditure per se. Weekly expenditures are bound to vary significantly from product to product due to the differences in their unit prices and therefore obscure the scale on the y-axis significantly.
 
 Products such as `SUNTAN` and `HOME HEALTH CARE` are luxury products and are expected to be correlated with income. `SUNTAN`, for example, correlates well with the number of occasions of vacation while `HOME HEALTH CARE` products can include personal care, drugs, and medical equipment. `SNACK NUTS` is a more surprising result, but the fact that their prices are typically on the higher-end relative to other snacks may help explain this.
 
@@ -85,7 +85,7 @@ As a final remark, we point to some unintuitive results in this plot such as the
 
 # "Clique on the link"
 
-The final task remains at hand: *linking* the economic factors we have just analyzed to the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network.
+The final task remains at hand: *linking* the economic factors we have just analyzed to the communities of products we may potentially discover in our product network. One way to detect these communities is by identifying *cliques* within the network (hence the title "clique on the link").
 
 A group of products is a clique if there exists at least one co-purchase count between *every* pair of products. We can expect that the products in the same clique are therefore complementary goods whose sales tend to move together. But could the relationship between a household's weekly expenditure and its income somehow depend on the cliques? Below, you will find an interactive plot in which you have the possibility to select some cliques and highlight them in the product network.
 
@@ -108,6 +108,6 @@ What's more, all of these cliques are found to have statistically significant ef
 
 Purchase decisions are dfficult to generalize and are not always intuitive. Retailers constantly bombard consumers with tactics for impulse buying which may obscure fundamental economic relationships in a backet of goods, let alone that considerable number of people do tend to buy on the fly. However, with data collected over a sufficiently long time span and analyzed over a large number of unique baskets of goods from many households, we can still gain valuable insights into the inherent consumption patterns.
 
-We have verified that many of these patterns are economically intuitive. Soft drinks are most commonly seen across all baskets. Certain products such as milk are remarkably connected and co-purchased with many other products. People stop for gas and that's often the only thing they stop for; otherwise, they tend to buy cigarettes while they have time. Bouquets are only bought with greeting cards because it makes sense that you would write a few kind, loving words to whom you will present the pretty flowers. Snack-related things are tightly grouped together in terms of co-purchase, so are alcoholic drinks, and so are common vegetables and meats.
+We have verified that many of these patterns are economically intuitive. Soft drinks are most commonly seen across all baskets. Certain products such as milk are remarkably connected and co-purchased with many other products. People stop for gas and that's often the only thing they stop for; otherwise, they tend to buy cigarettes while they have time. Bouquets are only bought with greeting cards because it makes sense that you would write a few kind, loving words to whom you will present the pretty flowers. Household chores-related things are tightly grouped together in terms of co-purchase, so are alcoholic drinks, and so are common vegetables and meats.
 
-An interesting extension of this study can be about how to leverage these intuitive findings for business improvements. Are items in the stores organized and arranged in accordance with these relationships? Can sales increase even more by grouping items in the same clique in a more presentable, easier-to-find way? For products that are rarely associated with anything *and* also has a low sales on its own, could the business actually consider putting these items out of stock to reduce overall costs? While in this project we mainly explored interesting economics at play, it is clear that much of these findings can potentially be incorporated into real-life decisions.
+An interesting extension of this study can be about how to leverage these findings for business improvements. Are items in the stores organized and arranged in accordance with these relationships? Can sales increase even more by arranging items in the same clique in a more presentable, easier-to-find way? For products that are rarely associated with anything *and* also has low sales on its own, could the business actually consider putting these items out of stock to reduce overall costs? While in this project we mainly explored interesting economics at play, it is clear that much of these findings can potentially be incorporated into real-life decisions.
