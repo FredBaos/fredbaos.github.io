@@ -91,14 +91,18 @@ A group of products is a clique if there exists at least one co-purchase count b
 
 {% include cliques.html %}
 
-As you might have seen on the above plot, we have some interesting cliques that are intuitive economically. Some notable examples are listed here:
-*	Clique 4: `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `PET CARE SUPPLIES`, `DOG FOODS`, `CAT FOOD`, `CANDY - CHECKLANE`
-*	Clique 11 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `IMPORTED WINE`, `DOMESTIC WINE`, `BEERS/ALES`
-*	Clique 15 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `BEEF`, `BROCCOLI/CAULIFLOWER`, `TOMATOES`, `ONIONS`, `SALAD MIX`, `CARROTS`
-*	Clique 322 : `SOFT DRINKS`, `FLUID MILK PRODUCTS`, `CHEESE`, `POPCORN`, `CANDAY - CHECKLANE`, `CANDY - PACKAGED`
+One important aspect of our product network is that it is close to an "ego-network" where many products are directly connected to one or two products, namely `SOFT DRINKS` or `FLUID MILK PRODUCTS`. Keeping this in mind, we turn our attention more towards items in the cliques other than these two items to discover meaningful complementary relationships. Indeed, as you may have already noticed, we have some interesting cliques that are intuitive economically:
 
-In clique 4, one may surmise that the community is closely related to "pet products". Similarly, clique 11 would be named "alcoholic drinks". We can see in the examples presented above that `SOFT DRINKS` and `FLUID MILK PRODUCTS` appear in a lot of cliques. This is consistent with earlier results where we observed that they are the two most present products in the baskets as well as the co-purchase matrix.
+*	Clique "Household items": `PAPER TOWELS`, `DISHWASH DETERGENTS`, `HOUSEHOLD CLEANING NEEDS`, `BROOMS AND MOPS`
+*	Clique "Alcohol": `BEERS/ALES`, `IMPORTED WINE`, `DOMESTIC WINE`, `CHEESE`
+*	Clique "Food mix #1": `ORGANICS FRUIT & VEGETABLES`, `CHEESE`, `BEEF`, `REFRIGERATED`
+*	Clique "Food mix #2": `SALAD MIX`, `PROCESSED`, `TOMATOES`, `BERRIES`
+*	Clique "Festivities": `CHRISTMAS SEASONAL`,`GREETING CARDS/WRAP/PARTY SUPLY`,`CANDY - PACKAGED`,`CANDY - CHECKLANE`
+*	Clique "Hygiene products": `ORAL HYGIENE PRODUCTS`, `MAKEUP AND TREATMENT`,`HAND/BODY/FACIAL PRODUCTS`,`HAIR CARE PRODUCTS`,`CANDY - PACKAGED`
 
+From these discoveries, one can quite intuitively surmise that products with the same general purpose with slightly differing uses or functionalities are complementary. In other words, the cliques above tell us that the sales of household items for doing chores, of alcoholic drinks, of common vegetable and meats, of festivities, and of hygiene products increase together.
+
+What's more, all of these cliques are found to have statistically significant effect on the correlation between weekely expenditure and household income. Put differently, weekly spending in general appears to be positively correlated with household income *when looking only at the products in these cliques*. A prime example is the clique "Alcohol"; the more the household income, the more the spending on alcoholic drinks seems to be.
 
 # Conclusion
 
